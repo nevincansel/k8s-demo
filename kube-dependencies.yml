@@ -1,8 +1,8 @@
 - hosts: all
   become: yes
   tasks:   
-   - name: update apt list
-    apt:
+  - name: update apt list
+     apt:
       update_cache: yes
       
   - name: install Docker
