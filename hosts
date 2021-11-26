@@ -1,8 +1,8 @@
 [masters]
-master ansible_host=20.82.49.194 ansible_user=cansel
+master ansible_host=51.124.194.205 ansible_user=cansel
 
 [workers]
-worker1 ansible_host=20.82.49.194 ansible_user=cansel
+worker1 ansible_host=51.124.194.205 ansible_user=cansel
 worker2 ansible_host=20.82.55.255 ansible_user=cansel
 
 [all:vars]
