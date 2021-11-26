@@ -1,6 +1,10 @@
 - hosts: server0
   become: yes
   tasks:
+    - name: install setfacl support
+      become: yes
+      apt: pkg=acl
+    
     - name: initialize the cluster
       shell: kubeadm init --pod-network-cidr=10.244.0.0/16 >> cluster_initialized.txt
       args:
