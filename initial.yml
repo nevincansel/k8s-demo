@@ -9,7 +9,14 @@
         dest: /etc/sudoers
         line: 'ubuntu ALL=(ALL) NOPASSWD: ALL'
         validate: 'visudo -cf %s'
- 
+        
+    - name: assign owner to directory
+      become: yes
+      become_user: ubuntu
+      shell: chown -R ubuntu:ubuntu /home/ubuntu
+      args:
+        chdir: $HOME
+        
     - name: set up authorized keys for the ubuntu user
       authorized_key: user=ubuntu key="{{item}}"
       with_file:

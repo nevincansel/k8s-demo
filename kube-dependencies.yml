@@ -5,6 +5,10 @@
      apt:
       update_cache: yes
       
+    - name: install setfacl support
+      become: yes
+      apt: pkg=acl
+      
    - name: install Docker
      apt:
        name: docker.io
