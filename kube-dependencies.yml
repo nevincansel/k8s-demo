@@ -1,11 +1,11 @@
 - hosts: all
   become: yes
   tasks:   
-  - name: update apt list
+   - name: update apt list
      apt:
       update_cache: yes
       
-  - name: install Docker
+   - name: install Docker
      apt:
        name: docker.io
        state: present
